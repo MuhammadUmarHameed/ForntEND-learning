@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CatPhotoApp</title>
+    </head>
+    <body>
+        <!--<h1>Hello World</h1>-->
+        <!--this is how you comment-->
+        <h2>CatPhotoApp</h2>
+        <main>
+            <h3>Cat Photos</h3>
+            <p>Click here to view more cat photos 
+            <a href="#"
+            target="_blank">cat photos</a>.
+            </p>
+            <a href="#"><img src="https://i.redd.it/9een0cpndn731.jpg" alt="A cute orange cat lying on it's back."></a>
+            <h3>Cat Lists</h3>
+            <div class="Lists">
+            <p>Things cats <em>love</em>.</p>
+            <ul>
+                <li>Cat nip</li>
+                <li>laser pointers</li>
+            </ul>
+            <img src="lasagna.jpg" alt="lasagna">
+            <p>Thing cats <strong>hate</strong>:</p>
+                <ol>
+                    <li>Flea treatment.</li>
+                    <li>thunder</li>
+                </ol>
+            </div>
+                <form action="/submit-cat-phot">
+                    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" checked>indoor</label><br>
+                    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" checked>outdoor</label><br>
+                    <label for="loving"><input id="loving" type="checkbox" name="personality"> loving</label><br>
+                    <label for="loving"><input id="lazy" type="checkbox" name="personality"> lazy</label><br>
+                    <label for="loving"><input id="energetic" type="checkbox" name="personality"> energetic</label><br>
+                    <input type="text" placeholder="cat photo URL" required>                    
+                    <button type="submit">Submit</button>
+                </form>
+        </main>
+        <footer>
+            <p><small>No Copyright-Touka</small></p>
+        </footer>
+    </body>
+</html>
