@@ -1,4 +1,75 @@
-p{
-    font-size: large;
-    color: blueviolet;
-} 
+/** Selectors **/
+/**applies to everything i.e universal selector **/ 
+/** it is used for css reset**/
+*{
+    font-family: monospace;
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{ 
+    font-size: 20px;
+}
+body{
+    font-size: 22px;
+    border: 3px solid black;
+    line-height: 1.5;
+    background-color: rgb(160, 222, 222);
+    color: darksalmon;
+}
+/**important override everyother selector**/
+main{ 
+    font-family: monospace !important;
+}
+
+/**class**/
+.highlight{
+    text-transform: uppercase;
+    background-color: gold;   
+}
+
+.gray {
+    color: gray;
+}
+/**id**/
+#second {
+    font-style: italic;
+}
+
+button, input, textarea, select{
+    font: inherit;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    color: rgba(red, green, blue, 2 alpha);
+    
+}
+
+/**Unit or values or sizes**/
+p{ 
+    border: 2px dashed red;
+    font-size: 1.2rem;
+    width: 40ch;
+}
+h1{
+    width: 50%;
+    font-size: 2em;
+    padding: 1em;
+}
+/**boxmodel**/
+
+.box{
+    background-color: azure;
+    border: 10px  double blueviolet ;
+    padding: 2rem 1rem 1rem 2rem;
+    margin: 2rem 1.5rem 2rem 1.5rem;
+    border-bottom: 5px solid chocolate;
+    outline: 5px solid violet;
+    outline-offset: -20px;
+}
