@@ -16,7 +16,7 @@ body{
     font-size: 22px;
     border: 3px solid black;
     line-height: 1.5;
-    background-color: rgb(160, 222, 222);
+    background-color: rgb(56, 85, 85);
     color: darksalmon;
 }
 /**important override everyother selector**/
@@ -73,3 +73,28 @@ h1{
     outline: 5px solid violet;
     outline-offset: -20px;
 }
+/**typography : is the way that text is arranged and presented**/
+h3{
+    color: rgb(0, 230, 247);
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.typo{
+    border: none;
+    margin-left: 2rem;
+    font-size: 1.8rem;  
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-align: justify;
+    text-indent: 1em;
+    line-height: 1.0;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.5rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+/* input,button,label{
+    font-size: 1.8rem;
+
+} */
