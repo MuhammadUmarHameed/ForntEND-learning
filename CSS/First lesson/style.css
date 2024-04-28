@@ -67,8 +67,8 @@ h1{
 /**boxmodel**/
 
 .box{
-    color: white;
-    background-color: white;
+    color: rgb(179, 36, 36);
+    background-color: rgb(123, 248, 179);
     border: 10px  double blueviolet ; 
     padding: 2rem 1rem 1rem 2rem;
     margin: 2rem 1.5rem 2rem 1.5rem;
