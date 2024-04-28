@@ -1,8 +1,10 @@
+/**fonts can be inported throught links**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /** Selectors **/
 /**applies to everything i.e universal selector **/ 
 /** it is used for css reset**/
 *{
-    font-family: monospace;
+    font-family: 'Roboto';
     
     margin: 0;
     padding: 0;
@@ -20,7 +22,7 @@ body{
     color: darksalmon;
 }
 /**important override everyother selector**/
-main{ 
+#second{
     font-family: monospace !important;
 }
 
@@ -65,7 +67,8 @@ h1{
 /**boxmodel**/
 
 .box{
-    background-color: azure;
+    color: white;
+    background-color: white;
     border: 10px  double blueviolet ; 
     padding: 2rem 1rem 1rem 2rem;
     margin: 2rem 1.5rem 2rem 1.5rem;
@@ -93,8 +96,59 @@ h3{
     word-spacing: 0.5rem;
     font-weight: bolder;
     font-style: italic;
-}
-/* input,button,label{
+    }
+
+    /* input,button,label{
     font-size: 1.8rem;
 
-} */
+    } */
+
+/**CSS LINKS**/
+/**sudo classes are arrange sensitive and need to be arranged correctly**/
+a{
+    text-decoration: none;
+    text-align: justify;
+    cursor: pointer;
+    color: rgb(116, 116, 216);
+}
+a:visited{
+    color: purple;
+}
+a:hover,a:focus{
+    color: rgb(116, 116, 216,0.8);
+}
+a:active{
+    color: chartreuse;
+}
+
+/**list styling**/
+main{ 
+    font-family: monospace !important;
+    padding: 1% 5%;
+}
+ol{
+    list-style-type: decimal-leading-zero;
+    padding: 0%;
+}
+ul{
+    list-style-type: square;
+    text-align: center;
+    list-style-position: inside;
+    color: black;
+    line-height: 1.6;
+/*     list-style-image: url("/ForntEND-learning/images/icons8-check-48.png");
+ */}
+ul li{
+    color: darkgoldenrod;
+}
+ul li:nth-child(odd){
+    color: black;
+}
+ul ::marker{
+   
+    color: seashell;
+    font-family: fantasy;
+    font-size: 1em;
+    content: "ONly 100rs>>  ";
+     
+}
