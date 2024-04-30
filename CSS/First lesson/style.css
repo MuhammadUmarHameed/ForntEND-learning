@@ -152,3 +152,81 @@ ul ::marker{
     content: "ONly 100rs>>  ";
      
 }
+li a:hover{
+    text-decoration: underline;
+}
+
+/**display prop**/
+.opposite{
+    /* display: none; */
+    list-style-type: none;
+    text-align: right;
+    background-color: black;
+    color: blue;
+    padding: 0.5rem;
+    
+}
+.disp{
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+/**float**/
+.block{
+    width: 30vw;
+    height: 30vw;
+    background-color: azure;
+    color: brown;
+    padding: 1rem;
+}
+.left{
+    float:left
+}
+.right{
+    float:right
+}
+.clear{
+    clear: both;
+}
+section{
+    background-color: bisque;
+    border: 1px solid forestgreen;
+    padding: 1rem;
+    display: flow-root;
+}
+.float{
+    border: none;
+    width: auto;
+    
+}
+
+/** columns**/
+.columns{
+    /* column-count: 4;
+    column-width: 250px; */
+    columns: 4 250px;
+    column-rule: 3px solid #333;
+    column-gap: 3rem;
+}
+.columns p{
+    margin-top: 0;
+}
+.columns h2{
+    margin-top: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    break-inside: avoid;
+    break-before: column;
+}
+.qoute{
+    border: none;
+    width: auto;
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    column-span: all;
+}
+.nowrap{
+    white-space: nowrap;
+}
