@@ -54,11 +54,11 @@ p {
 }
 
 /**Unit or values or sizes**/
-p{ 
+/* p{ 
     border: 2px dashed red;
     font-size: 1.2rem;
     width: 40ch;
-}
+} */
 h1{
     width: 50%;
     font-size: 2em;
@@ -66,7 +66,7 @@ h1{
 }
 /**boxmodel**/
 
-.box{
+ .boxing{
     color: rgb(179, 36, 36);
     background-color: rgb(123, 248, 179);
     border: 10px  double blueviolet ; 
@@ -229,4 +229,79 @@ section{
 }
 .nowrap{
     white-space: nowrap;
+}
+
+/**position**/
+.outer-container{
+    border: 3px dashed #333;
+    width: 75vw;
+    height: 85vh ;
+    margin: 40px auto;
+    position: relative;
+}
+.inner-container{
+    border: 2px solid #00f;
+    width: 40vw;
+    height: 50vh;
+    margin: 200px auto;
+}
+.box{
+    width: 150px;
+    height: 150px;
+    padding: 1rem;
+}
+.absolute{
+    background-color: #00f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.relative{
+    background-color: red;
+    position: relative;
+    top: 200px;
+    left: 200px;
+}
+.fixed{
+    background-color: green;
+    position: fixed;
+    top: 138px;
+    left: 50px;
+}
+.sticky{
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+/**flexbox**/
+.container{
+    max-width: 800px;
+    min-height: 400px;
+    padding: 20px;
+    border: 1px solid #000;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+   /*  flex-direction:row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+}
+.boxs{
+    height: 100px;
+    background-color: black;
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 100px;
+    flex-shrink: 1;
+    /**we can also write 
+    flex: 1 1 100; here 1 grow 1 shrink 100px basis **/
 }
