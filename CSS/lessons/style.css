@@ -305,3 +305,8 @@ section{
     /**we can also write 
     flex: 1 1 100; here 1 grow 1 shrink 100px basis **/
 }
+/**ONP**/
+.ONP{
+    text-align: center;
+    font-size: 2rem;
+}
