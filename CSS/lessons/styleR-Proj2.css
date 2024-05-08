@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font: 1.5rem "Nunito", sans-serif;
+    min-height: 100vh;
+    background-image: radial-gradient(whitesmoke,gray);
+    display: flex;
+    flex-direction: column;
+}
+
+header,footer{
+    background-color: rgb(32, 32, 46);
+    color: white;
+    text-align: center;
+    position: sticky;
+}
+header{
+    top: 0;
+}
+
+nav{
+    background-color: white;
+    padding: 0.5rem;
+    font-weight: bolder;
+    font-size: large;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 3px solid black;
+}
+
+nav a, nav a:visited{
+    color: black;
+}
+
+nav a:hover, nav a:focus{
+    color: hsla(0, 0%, 0%, 0.205);
+}
+
+footer{
+    bottom: 0;
+}
+
+main{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column ;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+.card{
+    scroll-margin-top: 8rem ;
+    width: min(100%,350px);
+    background-image: url("../../images/th-2966340954.jpg");
+    background-color: rgba(238, 231, 231, 0.993);
+    background-position: top;
+    background-size: 160% auto;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    border-radius: 10%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.card figure{
+    display: flex;
+    flex-direction: column nowrap;  
+     
+}
+.card img{
+    border: 2px double black;
+    border-radius: 50%;
+}
+.card figcaption{
+    font-weight: bolder;
+    font-size: 1.15em;
+    margin: 1rem;
+    text-align: center;
+}
+@media screen and (max-width:576px) {
+    nav{
+        padding: 0.2rem;
+    }
+    .card{
+        width: min(100%,325px);
+    }
+    .card figure{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width:576px) {
+    main{
+        justify-content: center;
+        flex-flow: row wrap;   
+        padding: 1rem;
+    }
+    .card{
+        width: min(100%,400px);
+        height: auto;
+    }
+    .card figure{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .card :last-child{
+        order: -1;
+    }
+}
+@media screen and (min-width:768px) {
+    nav{
+        display: none;
+    }
+    .card{
+        width: min(100%,325px);
+    }
+    .card figure{
+        flex-direction: column-reverse;
+    }
+    .card p{
+        margin-top: 1rem;
+    }
+}
+@media screen and (min-width:992px) {
+    .card{
+        width: min(100%,325px);
+    }
+}
+@media screen and (min-width:1200px) {
+    .card{
+        width: min(calc(33%- 1rem),500px);
+    }
+}
+@media screen and (min-height:425px) and (aspect-ratio:7/4){
+    h1{
+        font-size: 1.4rem;
+    }
+    nav{
+        display: none;
+    }
+    main{
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+    .card{
+        width: min(calc(33% - 0.25rem),200px);
+    }
+
+    .card figcaption, .card p{
+        font-size: 1.25rem;
+    }
+
+}
