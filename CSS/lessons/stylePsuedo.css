@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/*utility classes*/
+.nowrap{
+    white-space: nowrap;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font: 1.5rem "Nunito",sans-serif;
+    min-height: 100vh;
+    background-image: radial-gradient(whitesmoke,rgb(97, 95, 95));
+    display: flex;
+    flex-direction: column ;
+}
+/*is makes the code D.R.Y(do not repeat)*/
+:is(header,footer ){
+    position: sticky;
+    background-color: rgb(28, 27, 68);
+    color: #fff;
+    text-align: center;
+}
+/*where is also a pseudo class but it doesn't have any specificity*/
+:where(header){
+    top: 0;
+
+    color: red;
+}
+
+nav{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-bottom:2px solid black ;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+}
+/**Psedu Selectors**/
+/* nav a:link, nav a:visited{
+    color: #000;
+} */
+nav a:any-link{
+    color: #000;
+}
+/*it does work of both link and visited*/
+nav :is(a:hover, a:focus){
+    color: hsla(0, 0%, 0%, 0.2);
+}
+nav a:active{
+    color: red;
+}
+footer{
+    bottom: 0;
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+p{
+    text-align: center;
+}
+
+/*PRofile Card*/
+.card{
+    scroll-margin-top: 8rem;
+    width: min(100%,350px);
+    background-color: rgba(238, 238, 238, 0.37);
+    border: 2px solid black;
+    border-radius:15px ;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+/*this psedo class works on selected target*/
+.card:target{
+    border: 5px solid rebeccapurple;
+}
+.card figure{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card img{
+    border: 5px double black;
+    border-radius: 50%;
+}
+/*not pseudo class ignores selected attribute.alt is an attribute. */
+.card img:not([alt]){
+    border: 10px solid red;
+}
+/*nth child pseudo class specifies which child to target*/
+.card:nth-child(odd){
+    background-color: aqua;
+}
+.card figcaption{
+    font-weight: bolder;
+    font-size:2rem ;
+    margin: 1rem;
+    text-align: center;
+}
+/*:: is psedu element*/
+.card figcaption::after{
+    content: "💫";
+    display: block;
+}
+
+.card figcaption::first-letter{
+    font-size: 3em;
+}
+.card p{
+    position: relative;
+}
+.card p::before{
+    content: open-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    left: -0.05em;
+}
+.card p::after{
+    content: close-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    right: -0.05em;
+}
+
+@media screen and (min-width:576px){
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .card{
+        width: min(100%, 400px);
+    }
+    .card:last-child{
+        order: -1;
+    }
+}
+@media screen and (min-width:768px){
+    nav{
+        display: none;
+    }
+    .card{
+        width: min(100%,325px);
+    }
+    .card figure{
+        flex-flow:column-reverse ;
+    }
+    .card figcaption{
+        margin: 0.1em 0;
+    }
+    .card p{
+        margin-top: 1rem;
+    }
+}
+@media screen and (min-width:992px){
+    .card{
+        width: min(100%,400px);
+    }
+    .card :nth-child(2){
+        order: -1;
+    }
+}
+@media screen and (min-width:1200px){
+    .card{
+        width: min(calc(33% - 1rem),500px);
+    }
+}
+@media screen and (min-height:425px) and (aspect-ratio:7/4){
+    h1{
+        font-size: 1.4rem;
+    }
+    nav{
+        display: none;
+    }
+    main{
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+    .card{
+        width: min(calc(33% - 0.25rem),200px);
+    }
+
+    .card figcaption, .card p{
+        font-size: 1.25rem;
+    }
+
+}
