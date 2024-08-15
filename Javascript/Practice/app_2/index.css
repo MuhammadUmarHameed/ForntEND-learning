@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --BG-IMAGE: url("table.png") ;
+    --FONT-COLOR:white ;
+    --HEADER-COLOR:goldenrod;
+    --FONT-FAMILY: Roboto;
+    --BUTTON-COLOR:green;
+    --BUTTON-BGCOLOR:goldenrod;
+}
+
+body{
+    background-image: var(--BG-IMAGE);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: column nowrap;
+    line-height: 4;
+}
+h1{
+    color:var(--HEADER-COLOR);
+    font-weight: bolder;
+    font-size: 5cap;
+    font-family: var(--FONT-FAMILY);
+}
+p{
+    color: var(--FONT-COLOR);
+    display: grid;
+    justify-content: space-evenly;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: var(--FONT-FAMILY);
+    line-height: 3;
+    
+}
+
+#message-el {
+    font-style: italic;
+}
+
+button{
+    color: var(--BUTTON-COLOR);
+    background-color: var(--BUTTON-BGCOLOR);
+    font-size: x-large;
+    font-weight: bolder;
+    margin-left: 340px ;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    
+}
