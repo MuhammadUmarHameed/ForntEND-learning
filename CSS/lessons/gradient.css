@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --BG-COLOR: purple;
+    --ANGLE: 0deg;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+
+body {
+    background-color: darkslateblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.box{
+    width: 500px;
+    height: 500px;
+    background-color: var(--BG-COLOR);
+    border-radius: 20px;
+    position: relative;
+}
+
+.box::after,.box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    --angle: 0deg;
+    background-image: conic-gradient(
+       from var(--angle), #ea2dd8, #001bf1, #ea2dd8
+    );
+    border-radius: 20px;
+    animation: autoRotate 2s linear infinite;
+    z-index: -1;
+    padding: 1px;
+    box-sizing: unset;
+    transform: translate(-50%, -50%);
+}
+
+.box::after{
+    filter: blur(60px);
+}
+
+@keyframes autoRotate {
+    to {
+        --angle: 360deg;
+    }
+}
