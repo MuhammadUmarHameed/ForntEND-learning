@@ -30,7 +30,8 @@ function BookList() {
     <>
       <h1 className="head">Best Seller Books</h1>
       <section className="bookList">
-        {bookList(books)};{/* <EventExamples /> */}
+        {bookList(books)}
+        {/* <EventExamples /> */}
       </section>
     </>
   );
