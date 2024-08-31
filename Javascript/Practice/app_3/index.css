@@ -27,6 +27,12 @@ button{
     border: none;
     cursor: pointer;
 }
+#delete-btn {
+    background-color: #fff;
+    border: 2px #7cad4e solid;
+    color: #7cad4e;
+    font-weight: bolder;
+}
 ul{
     margin: 10px;
 }

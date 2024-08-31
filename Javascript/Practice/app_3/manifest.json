@@ -3,7 +3,12 @@
     "name": "My First Chrome Extension",
     "version": "1.0",
     "description": "This is a simple Chrome extension that adds a new button to the toolbar.",
-    "permissions": ["activeTab", "tabs"],
+    "permissions": ["activeTab", "tabs", "storage"],
+    "background": {
+        "scripts": ["background.js"],
+        "service_workers": "background.js"
+
+    },
     "action": {
         "default_icon": "icon.png",
         "default_popup": "index.html"
