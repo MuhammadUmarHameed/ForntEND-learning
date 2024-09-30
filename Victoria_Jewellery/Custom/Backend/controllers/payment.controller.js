@@ -6,7 +6,7 @@ export const createCheckoutSession = async (req, res) => {
   try {
     const { products, couponCode } = req.body;
 
-    if (!Array.isArray(products) || !products.length === 0) {
+    if (!Array.isArray(products) || products.length === 0) {
       return res
         .status(400)
         .json({ message: 'Invalid or empty products array' });
@@ -28,8 +28,10 @@ export const createCheckoutSession = async (req, res) => {
           },
           unit_amount: amount,
         },
+        quantity: product.quantity, // Add quantity here
       };
     });
+
     let coupon = null;
     if (couponCode) {
       coupon = await Coupon.findOne({
@@ -74,14 +76,17 @@ export const createCheckoutSession = async (req, res) => {
       await createNewCoupon(req.user._id);
     }
     res.status(200).json({ id: session.id, totalAmount: totalAmount / 100 });
-  } catch (error) {}
+  } catch (error) {
+    console.error('Error in createCheckoutSession:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 };
 
-export const success = async (req, res) => {
+export const checkoutSuccess = async (req, res) => {
   try {
-    const { session_id } = req.body;
+    const { sessionId } = req.body;
     const session = await stripe.checkout.sessions.retrieve(sessionId);
-    if (session.paymenr_staus === 'paid') {
+    if (session.payment_status === 'paid') {
       if (session.metadata.couponCode) {
         await Coupon.findOneAndUpdate(
           {
@@ -102,9 +107,24 @@ export const success = async (req, res) => {
           quantity: product.quantity,
           price: product.price,
         })),
+        totalAmount: session.amount_total / 100,
+        stripeSessionId: sessionId,
+      });
+
+      await newOrder.save();
+      res.status(200).json({
+        success: true,
+        message:
+          'Purchase successful. Order placed successfully, and coupon deactivated if used.',
+        orderId: newOrder._id,
       });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.error('Error processing successful checkout: ', error);
+    res
+      .status(500)
+      .json({ message: 'Internal Server Error', error: error.message });
+  }
 };
 
 async function createStripeCoupon(discountPercentage) {
